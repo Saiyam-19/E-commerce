@@ -1,2 +1,7 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1 class="jumbotron">Shopping App | <%= @category.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <%= render partial: "shared/product", collection: @products %>
+  </div>
+</div>
