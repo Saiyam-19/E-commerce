@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable,  :validatable
 
   has_many :orders
   has_many :products, through: :orders
@@ -24,10 +24,10 @@ class User < ApplicationRecord
     $redis.hincrby current_user_cart, product_id, -1
   end
 
-  def cart_count
-    quantities = $redis.hvals "cart#{id}"
-    quantities.reduce(0) { |sum, qty| sum + qty.to_i }
-  end
+  # def cart_count
+  #   quantities = $redis.hvals "cart#{id}"
+  #   quantities.reduce(0) { |sum, qty| sum + qty.to_i }
+  # end
 
   def cart_total_price
     get_cart_products_with_qty.map { |product, qty| product.price * qty.to_i }.reduce(:+)

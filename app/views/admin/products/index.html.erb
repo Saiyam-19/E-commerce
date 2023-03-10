@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin | Products</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Admin | Products</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <%= link_to 'Add Product', new_admin_product_path %>
+        <div class="col-12 card">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "admin_product", collection: @products %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

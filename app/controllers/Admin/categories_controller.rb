@@ -29,7 +29,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = "Category updated!"
-      redirect_to admin_categories_path
+      redirect_to admin_categories_path notice: "Category was successfully created."
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class Admin::CategoriesController < ApplicationController
   def destroy
     Category.destroy(params[:id])
     flash[:notice] = "Category removed!"
-    redirect_to admin_categories_path
+    redirect_to admin_categories_path notice: "Category was successfully removed."
   end
 
   private

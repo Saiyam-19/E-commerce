@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a Product</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Add a Product</h1>
+    </div>
+    <div class="container">
+      <%= simple_form_for [:admin, @product], class: "form-horizontal" do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
+  
+    <%= f.button :submit %>
+  <% end %>
+  
+  <%= link_to 'Back to Product List', admin_products_path %>
+</div>
+  </body>
+</html>
