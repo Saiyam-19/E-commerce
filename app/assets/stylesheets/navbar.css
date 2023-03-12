@@ -1,0 +1,134 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navlinks {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .navlinks li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    flex-basis: 100%;
+  }
+  
+  .navlinks li:last-child {
+    margin-right: 0;
+  }
+  
+  .navlinks li a {
+    color: #444444;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navlinks li a:hover {
+    color: #007AFF;
+  }
+  
+  .navlinks li.active a {
+    color: #007AFF;
+    font-weight: bold;
+  }
+  
+  /* Login Button Styling */
+  .login-button {
+    background-color: #007AFF;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: #FFFFFF;
+    color: #007AFF;
+    border: 1px solid #007AFF;
+  }
+  
+  /* Logout Button Styling */
+  .logout-button {
+    background-color: #FFFFFF;
+    color: #007AFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 1px solid #007AFF;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .logout-button:hover {
+    background-color: #007AFF;
+    color: #FFFFFF;
+  }
+  
+  /* Admin Section Styling */
+  .admin-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-section h4 {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .admin-section li {
+    margin-right: 20px;
+  }
+  
+  .admin-section li:last-child {
+    margin-right: 0;
+  }
+  
+  .admin-section li a {
+    color: #444444;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .admin-section li a:hover {
+    color: #007AFF;
+  }
+  
+  @media (max-width: 768px) {
+    .navlinks {
+      flex-wrap: wrap;
+    }
+    .navlinks li {
+      margin-right: 0;
+      margin-bottom: 10px;
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .navlinks li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
