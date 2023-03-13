@@ -1,0 +1,105 @@
+/* Style for the jumbotron */
+.jumbotron {
+    background-color: #34495e;
+    color: #fff;
+    padding: 60px ;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    }
+    
+    /* Style for the container */
+    .container3 {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    
+    /* Style for the Add Category button */
+    .btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    }
+    
+    /* Style for the table */
+    .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    }
+    
+    /* Style for the table headers */
+    .table th {
+    background-color: #34495e;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    }
+    
+    /* Style for the table cells */
+    .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    }
+    .button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 0.25rem;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    /* Add hover and focus effects to the button */
+    .button:hover,
+    .button:focus {
+      background-color: #0069d9;
+      outline: none;
+    }
+    
+    /* Add a margin to the button */
+    .button + .button {
+      margin-left: 1rem;
+    }
+    .btn1{
+        align-items: center;
+        text-align: center;
+    }
+    .edit-btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
+      .delete-btn {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+   
+    

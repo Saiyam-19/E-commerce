@@ -1,0 +1,50 @@
+.jumbotron {
+    background-color: #f8f9fa;
+    padding: 2rem;
+  }
+  
+  /* Style the form inputs and button */
+  input[type="text"], button[type="submit"] {
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Style the button to look like a primary button */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Add some margin to the link */
+  a {
+    margin-top: 1rem;
+  }
+  
+  /* Center the form horizontally */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+   .card-footer {
+    text-align: center;
+  }
+  
+  .card-footer a {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card-footer a:hover {
+    background-color: #4a42c9;
+  }

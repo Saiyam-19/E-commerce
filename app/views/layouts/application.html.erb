@@ -11,28 +11,43 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="navbar">
-      <div class="container">
-        <ul class="navlinks">
-          <li><%= link_to 'Home', products_path %></li>
-          <% Category.all.each do |category| %>
-            <li><%= link_to category.name.capitalize, category_path(category) %></li>
-          <% end %>
-          <% unless user_signed_in? %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-          <% end %>
-          <% if user_signed_in? %>
-            <li><%= link_to "Cart (#{current_user.cart_count})", cart_path %></li>
-            <li><%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %></li>
-          <% end %>
-          <% if admin_signed_in? %>
-            <li><%= link_to 'Categories', admin_categories_path %></li>
-            <li><%= link_to 'Products', admin_products_path%></li> 
-            <%# <li><%= link_to 'Orders', admin_orders_path %>
-          <% end %>
-        </ul>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h1 class="title ">Shopping App</h1>
+        </a>
       </div>
-    </div>
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">Home</a>
+        <% Category.all.each do |category| %>
+          <a class="navbar-item" href="<%= category_path(category) %>"><%= category.name.capitalize %></a>
+        <% end %>
+        <% if user_signed_in? %>
+          <a class="navbar-item" href="<%= cart_path %>">Cart </a>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-item", data: { turbo: "false" } %>
+            <a class="navbar-link">
+              <%= current_user.email %>
+            </a>
+          </div>
+        <% else %>
+          <a class="navbar-item" href="<%= new_user_session_path %>">Login</a>
+          <a class="navbar-item" href="<%= new_user_registration_path %>">Sign Up</a>
+        <% end %>
+        <% if admin_signed_in? %>
+        
+        <div class="dropdown">
+          <button class="dropbtn ">Admin Portal</button>
+          <div class="dropdown-content">
+            <%= link_to 'Categories', admin_categories_path %>
+            <%= link_to 'Products', admin_products_path %>
+            <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+          </div>
+        </div>
+        <%else%>
+        <a class="navbar-item" href="<%= new_admin_session_path %>">Admin Login</a>
+      <% end %>
+      </div>
+    </nav>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
     <% end %>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Admin | Products</title>
+    <%= stylesheet_link_tag "admin_products" %>
   </head>
   <body>
     <div class="jumbotron">
@@ -9,7 +10,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <%= link_to 'Add Product', new_admin_product_path %>
+       
         <div class="col-12 card">
           <table class="table">
             <thead>
@@ -17,12 +18,15 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              <%= render partial: "admin_product", collection: @products %>
+              <%= render partial: "admin_products", collection: @products %>
             </tbody>
           </table>
+           <div class="btn1"> <%= button_to 'Add Product', new_admin_product_path, method: :get, class: "button" %></div>
         </div>
       </div>
     </div>

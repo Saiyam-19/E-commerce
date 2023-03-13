@@ -85,3 +85,4 @@ gem 'simple_form'
 gem 'slim-rails'
 
 gem 'gon', '~> 6.2.0'
+

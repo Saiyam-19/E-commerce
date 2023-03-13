@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>ShoppingAppRedo</title>
+    <%= csrf_meta_tags %>
+    <%= include_gon %>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+   
+    <%= stylesheet_link_tag "cart" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body>
 <h1 class="jumbotron">Your Shopping Cart!</h1>
 <div class="container">
   <div class="row">
@@ -7,6 +20,7 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Subtotal</th>
+        <th></th>
       </thead>
       <tbody>
         <% @cart_products_with_qty.each do |array| %>
@@ -18,24 +32,27 @@
             <td class="align-middle"><%= qty %></td>
             <td class="align-middle"><%= product.price * qty.to_i %></td>
             <td class="align-middle">
-              <%= link_to '+', add_to_cart_path(product), method: :put, class: "btn" %>
-              <%= link_to '-', remove_one_cart_path(product), method: :put, class: "btn" %>
-              <%= link_to 'Remove', remove_from_cart_path(product), method: :put, class: "btn btn-danger" %>
+              <div class="row align-middle">
+              <%= button_to '+', add_to_cart_path(product), method: :put, class: "btn",remote: true %>
+              <%= button_to '-', remove_one_cart_path(product), method: :put, class: "btn", remote: true %>
+              <%= button_to 'Remove', remove_from_cart_path(product), method: :put, class: "btn btn-danger",remote: true %>
+              </div>
             </td>
           </tr>
         <% end %>
-        <tr class="font-weight-bold">
-          <td colspan="3">
-            <h5>Total</h5>
-          </td>
-          <td>
-            <h5><%= @cart_total %></h5>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <% unless current_user.get_cart_products_with_qty.blank? %>
+         <tr class="font-weight-bold">
+      <td colspan="3">
+        <h5>Total</h5>
+      </td>
+      <td>
+        <h5><%= @cart_total %></h5>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% unless current_user.get_cart_products_with_qty.blank? %>
   <%= link_to "Checkout", new_transaction_path, class: "btn btn-success" %>
 <% end %>
-</div>
+  </div>
 </div>

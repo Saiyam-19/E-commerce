@@ -3,6 +3,8 @@ class Admin::CategoriesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
+    puts current_admin
+    puts admin_signed_in?
     @categories = Category.all
   end
 

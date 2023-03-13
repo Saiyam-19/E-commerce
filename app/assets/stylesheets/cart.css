@@ -1,0 +1,88 @@
+/* Style for the jumbotron header */
+.jumbotron {
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Style for the table */
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style for table headers */
+  .table thead th {
+    border-bottom: 2px solid #ccc;
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  /* Style for table rows */
+  .table tbody tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Style for table data cells */
+  .table td {
+    padding: 1rem;
+  }
+  
+  /* Style for table data cells containing buttons */
+  .table td button {
+    display: inline;
+    margin-right: 5px;
+  }
+  
+  /* Style for table buttons */
+  .btn {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  
+  /* Style for danger button */
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  /* Style for checkout button */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  /* Style for total row */
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  /* Style for container */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Style for row */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+  

@@ -1,0 +1,89 @@
+/* style the jumbotron */
+.jumbotron5 {
+    background-color: #eee;
+    text-align: center;
+    padding: 60px;
+    margin-bottom: 40px;
+  }
+  
+  /* style the form container */
+  .container5 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* style the form */
+  form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* style the form inputs */
+ 
+  
+  /* style the form label */
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* style the form checkboxes */
+  form input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  input[type="text"], form input[type="number"], input[type="submit"] {
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  button[type="submit"] {
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  /* Style the input to look like a primary input */
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  /* style the form back button on hover */
+  .back-button:hover {
+    background-color: #f1f1f1;
+  }
+  .card-footer {
+    text-align: center;
+  }
+  
+  .card-footer a {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card-footer a:hover {
+    background-color: #4a42c9;
+  }
