@@ -1,0 +1,6 @@
+<tr>
+  <td><%= admin_category.name %></td>
+  <td><%= button_to 'Edit', edit_admin_category_path(admin_category), class: "edit-btn" %></td>
+  
+  <td><%= button_to "Destroy", admin_category_path(admin_category),  method: :delete, data: { turbo: "false" }, class: "delete-btn" %></td>
+</tr>

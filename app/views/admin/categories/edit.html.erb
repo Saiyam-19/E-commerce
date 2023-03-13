@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>ShoppingAppRedo</title>
+    <%= csrf_meta_tags %>
+    <%= include_gon %>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+   
+    <%= stylesheet_link_tag "admin_edit" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body>
+<h1 class="jumbotron">Edit Category</h1>
+
+<%if @category.present? %>
+<div class="container">
+  <%= simple_form_for [:admin, @category], class: "form-horizontal" do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <div class="card-footer">
+      <%= link_to 'Back to Product List', products_path %>
+  </div>
+</div>
+<%end%>

@@ -1,33 +1,29 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'products/index'
-    get 'products/new'
-    get 'products/create'
-    get 'products/edit'
-    get 'products/update'
-    get 'products/destroy'
-    get 'categories/index'
-    get 'categories/new'
-    get 'categories/create'
-    get 'categories/edit'
-    get 'categories/update'
-    get 'categories/destroy'
-  end
+
   devise_for :admins
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
-  # Defines the root path route ("/")
-  # root "articles#index"
-  namespace :admin do 
-    root to: 'product#index'
-    resources :prodcuts, only: [:index, :new, :create,:edit,:update,:destory]
-    resources :categories, only: [:index, :new, :create,:edit,:update,:destory]
+  resource :cart, only: [:show] do
+    put 'add/:product_id', to: 'carts#add', as: :add_to
+    put 'remove/:product_id', to: 'carts#remove', as: :remove_from
+    put 'remove_one/:product_id', to: 'carts#removeone', as: :remove_one
+  end
+  resources :transactions, only: [:new, :create]
+
+  namespace :admin do
+    root to: 'products#index'
+    resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :orders, only: [:index]
   end
 
-
-
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+  
+  
 end

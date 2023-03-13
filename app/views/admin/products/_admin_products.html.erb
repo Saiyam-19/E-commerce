@@ -1,0 +1,7 @@
+<tr>
+  <td><%= admin_products.name %></td>
+  <td><%= admin_products.description %></td>
+  <td><%= admin_products.price %></td>
+  <td><%= button_to 'Edit', edit_admin_product_path(admin_products), class: "edit-btn" %></td>
+  <td><%= button_to 'Delete', admin_product_path(admin_products),  method: :delete, data: { turbo: "false" }, class: "delete-btn"%></td>
+</tr>
